@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ../backend-korapka
+    container_name: korapka-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - C:/Users/kinga/korapka/backend-korapka:/app
+    environment:
+      - DJANGO_SETTINGS_MODULE=backend.settings
+      - PYTHONPATH=/app
+
+  frontend:
+    build: ../frontend-korapka
+    container_name: korapka-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend

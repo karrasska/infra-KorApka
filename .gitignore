@@ -1,0 +1,14 @@
+# Ignore Python cache, venv, and DB
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+db.sqlite3
+
+# Ignore Node modules and build
+node_modules/
+build/
+dist/
+.env
+*.log
